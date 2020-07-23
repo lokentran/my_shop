@@ -1,77 +1,139 @@
 <?php
 
+
 namespace App\Model;
 
-class Product {
-    protected $id;
 
-    protected $name;
+class Product
+{
+    public $id;
+    public $img;
+    public $name;
+    public $price;
+    public $quantity;
+    public $description;
+    public $category_id;
 
-    protected $price;
-
-    public function __construct($name, $price)
+    public function __construct($img, $name, $price, $quantity, $description,$category_id)
     {
+        $this->img = $img;
         $this->name = $name;
         $this->price = $price;
+        $this->quantity = $quantity;
+        $this->description = $description;
+        $this->category_id = $category_id;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getCategoryId()
+    {
+        return $this->category_id;
+    }
 
     /**
-     * Get the value of id
-     */ 
+     * @param mixed $category_id
+     */
+    public function setCategoryId($category_id): void
+    {
+        $this->category_id = $category_id;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getId()
     {
         return $this->id;
     }
 
     /**
-     * Set the value o 
-     *
-     * @return  self
-     */ 
-    public function setId($id)
+     * @param mixed $id
+     */
+    public function setId($id): void
     {
         $this->id = $id;
-
-        return $this;
     }
 
     /**
-     * Get the value of name
-     */ 
+     * @return mixed
+     */
+    public function getImg()
+    {
+        return $this->img;
+    }
+
+    /**
+     * @param mixed $img
+     */
+    public function setImg($img): void
+    {
+        $this->img = $img;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getName()
     {
         return $this->name;
     }
 
     /**
-     * Set the value of name
-     *
-     * @return  self
-     */ 
-    public function setName($name)
+     * @param mixed $name
+     */
+    public function setName($name): void
     {
         $this->name = $name;
-
     }
 
     /**
-     * Get the value of price
-     */ 
+     * @return mixed
+     */
     public function getPrice()
     {
         return $this->price;
     }
 
     /**
-     * Set the value of price
-     *
-     * @return  self
-     */ 
-    public function setPrice($price)
+     * @param mixed $price
+     */
+    public function setPrice($price): void
     {
         $this->price = $price;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getQuantity()
+    {
+        return $this->quantity;
+    }
+
+    /**
+     * @param mixed $quantity
+     */
+    public function setQuantity($quantity): void
+    {
+        $this->quantity = $quantity;
+    }
 
 
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param mixed $description
+     */
+    public function setDescription($description): void
+    {
+        $this->description = $description;
     }
 }
